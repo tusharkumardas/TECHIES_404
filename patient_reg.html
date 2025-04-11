@@ -14,6 +14,8 @@
   <form>
     <h2>Patient Registration</h2>
 
+    <input type="hidden" name="form_type" value="patient" />
+
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" required>
 
@@ -61,4 +63,28 @@
     <input type="submit" value="Register">
   </form>
 </body>
-</html>  
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwCzvNtP745c4MHoV4bTdLeaRa4yK3T0L2dndSIMTWBtaq-V0PwGcZEBg9ZgBjoQ1Bu/exec';
+    const form = document.querySelector("form");
+  
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+  
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+  
+      fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(data),
+      })
+      .then(response => {
+        alert("Patient registered successfully!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Error occurred: " + error.message);
+      });
+    });
+  </script>
+  
+</html>
