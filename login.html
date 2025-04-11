@@ -1,84 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
-    <style>
-        h1{
-            text-align: center;
-        }
-        Button{
-            width: 200px; 
-            height: 100px; 
-            font-size: 16px;
-            
-        }
-
-        form {
-    background-color: #8cc773;
-    max-width: 600px;
-    margin: auto;
-    padding: 50px;
-    border-radius: 100px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);   
-            }
-
-  header {
-    text-align: center;
-    background-color: #4CAF50;
-    color: white;
-    padding: 15px 0;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  
-  header h1 {
-    margin: 0;
-    font-size: 26px;
-    letter-spacing: 1px;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LOGIN</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-       
-</style>
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      background-color: #8cc773;
+      max-width: 600px;
+      margin: auto;
+      padding: 50px;
+      border-radius: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 0;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    .form-group {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .btn-login {
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-login:hover {
+      background-color: #45a049;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .links a {
+      margin: 0 10px;
+      color: #004d00;
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
-<header>
+<body>
+  <header>
     <h1>RURAL HEALTHCARE CONNECT</h1>
-</header>
+  </header>
 
-    <body style="background-color:white">
-        <form id="form1" runat="server">
-            <h1>LOGIN</h1>
-            <p>&nbsp;</p>
-            <div style="text-align: center">
-                <strong>USERNAME:</strong> 
-              
-              <input type="textbox">
-                <br />
-                <br />
-                <br />
-                <strong>PASSWORD:</strong>
-                <input type= "password"> 
-            
-                <br />
-                <strong>
-                <br />
-                
-                <input type="radio" name="AA" >DOCTOR
-        <input type="radio" name="AA">PATIENTS
-                </strong>
-                <br />
-           
-                <br />
-                <br />
-              
+  <form id="form1" runat="server">
+    <h1>LOGIN</h1>
 
-              <input type= "Button" value="LOGIN">
-    
-            </div>
-        </form>
-    </body>
+    <div class="form-group">
+      <strong>USERNAME:</strong><br />
+      <input type="text" name="username" required />
+    </div>
 
+    <div class="form-group">
+      <strong>PASSWORD:</strong><br />
+      <input type="password" name="password" required />
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value="LOGIN" class="btn-login" />
+    </div>
+
+    <div class="links">
+      <a href="#">Forgot Password?</a>
+      |
+      <a href="doc_reg.html">New Registration</a>
+       
+    </div>
+  </form>  
+</body>
 </html>
