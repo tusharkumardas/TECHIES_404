@@ -119,8 +119,23 @@
     <div class="links">
       <a href="#">Forgot Password?</a>
       |
-      <a href="#">New Registration</a>
+      <a href="#" onclick="chooseRegistration()">New Registration</a>
+       
     </div>
   </form>
+  <script>
+    function chooseRegistration() {
+      const choice = prompt("Register as:\nType 'doctor' or 'patient'").toLowerCase();
+  
+      if (choice === "doctor") {
+        window.location.href = "doc_reg.html"; // replace with your actual file
+      } else if (choice === "patient") {
+        window.location.href = "patient_reg.html"; // replace with your actual file
+      } else if (choice !== null) {
+        alert("Please enter 'doctor' or 'patient'.");
+      }
+    }
+  </script>
+  
 </body>
 </html>
