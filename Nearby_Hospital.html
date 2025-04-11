@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nearby Hospitals - Jamshedpur</title>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-sA+e2At0dH9jv4hNw3e5qFvyMWm1rV64XYCkGg9LF0k="
+    crossorigin=""
+  />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+    }
+
+    .hospital-list {
+      max-width: 700px;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .hospital-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .hospital-item:last-child {
+      border-bottom: none;
+    }
+
+    .hospital-name {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .hospital-address {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .load-button {
+      display: block;
+      margin: 0 auto 30px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .load-button:hover {
+      background-color: #3e8e41;
+    }
+
+    #map {
+      height: 400px;
+      max-width: 700px;
+      margin: 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .google-map-embed {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      height: 400px;
+      margin: 40px auto 0;
+      border: none;
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Nearby Hospitals in Jamshedpur</h1>
+  <button class="load-button" onclick="loadHospitals()">Find Hospitals</button>
+  
+  <div id="map"></div>
+
+  <div class="hospital-list" id="hospitalList">
+    <!-- Hospital results will appear here -->
+  </div>
+
+  <!-- Google Maps Embed -->
+  <iframe
+    class="google-map-embed"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.997073214032!2d-0.1277586842290327!3d51.50735078674634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ebe7f5b0e5%3A0x8dd2f6d6b9e4ae8!2sBig%20Ben!5e0!3m2!1sen!2suk!4v1635826822347!5m2!1sen!2suk"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-o9N1j7k8Ggs+2G1hTn9wPJ4f6XKJzziWd8Rnk2Gx+YQ="
+    crossorigin="">
+  </script>
+
+  <script>
+    const apiKey = "YOUR_API_KEY"; // Replace with your Geoapify API key
+    const lat = 22.8046;  // Jamshedpur latitude
+    const lon = 86.2029;  // Jamshedpur longitude
+    const radius = 5000;
+    let map;
+    let markers = [];
+
+    function initMap() {
+      map = L.map('map').setView([lat, lon], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+    }
+
+    function loadHospitals() {
+      const url = `https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=circle:${lon},${lat},${radius}&limit=10&apiKey=${apiKey}`;
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          const listContainer = document.getElementById("hospitalList");
+          listContainer.innerHTML = "";
+
+          markers.forEach(marker => map.removeLayer(marker));
+          markers = [];
+
+          if (data.features.length === 0) {
+            listContainer.innerHTML = "<p>No hospitals found nearby.</p>";
+            return;
+          }
+
+          data.features.forEach(hospital => {
+            const name = hospital.properties.name || "Unnamed Hospital";
+            const address = hospital.properties.formatted || "Address not available";
+            const latLng = [
+              hospital.geometry.coordinates[1],
+              hospital.geometry.coordinates[0]
+            ];
+
+            const item = document.createElement("div");
+            item.className = "hospital-item";
+            item.innerHTML = `
+              <div class="hospital-name">${name}</div>
+              <div class="hospital-address">${address}</div>
+            `;
+            listContainer.appendChild(item);
+
+            const marker = L.marker(latLng).addTo(map)
+              .bindPopup(`<strong>${name}</strong><br>${address}`);
+            markers.push(marker);
+          });
+
+          const bounds = markers.map(m => m.getLatLng());
+          if (bounds.length) {
+            map.fitBounds(bounds);
+          }
+        })
+        .catch(err => {
+          console.error("Error fetching hospitals:", err);
+          document.getElementById("hospitalList").innerHTML = "<p>Error loading hospitals.</p>";
+        });
+    }
+
+    window.onload = initMap;
+  </script>
+</body>
+</html>
