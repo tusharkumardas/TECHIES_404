@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor - Online Consultant</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eef3ee;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 0;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      background-color: #ffffff;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #4caf50;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      margin: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .send-btn {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .send-btn:hover {
+      background-color: #388e3c;
+    }
+
+    .print-btn {
+      background-color: #2196f3;
+      color: white;
+    }
+
+    .print-btn:hover {
+      background-color: #1976d2;
+    }
+
+    .cancel-btn {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .cancel-btn:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    DOCTOR ONLINE CONSULTATION PANEL
+  </header>
+
+  <form>
+    <h2>Respond to Patient Query</h2>
+
+    <div class="section">
+      <label for="patientQuery">Patient's Problem:</label>
+      <textarea id="patientQuery" readonly>
+Patient has reported frequent headaches and fatigue. Requests advice on possible causes and remedies.
+      </textarea>
+    </div>
+
+    <div class="section">
+      <label for="doctorResponse">Doctor's Response:</label>
+      <textarea id="doctorResponse" placeholder="Type your response here..."></textarea>
+    </div>
+
+    <div class="section">
+      <label for="prescription">Prescription:</label>
+      <textarea id="prescription" placeholder="e.g., Paracetamol 500mg twice daily after food"></textarea>
+    </div>
+
+    <div class="button-group">
+      <button type="submit" class="send-btn">SEND RESPONSE</button>
+      <button type="button" class="print-btn" onclick="window.print()">PRINT PRESCRIPTION</button>
+      <button type="reset" class="cancel-btn">CANCEL</button>
+    </div>
+  </form>
+</body>
+</html>

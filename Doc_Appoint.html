@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Doctor Dashboard - Appointments</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 0;
+      font-size: 24px;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 12px;
+    }
+
+    th {
+      background-color: #e8f5e9;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .accept-btn,
+    .reject-btn {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .accept-btn {
+      background-color: #4caf50;
+    }
+
+    .reject-btn {
+      background-color: #f44336;
+    }
+
+    .accept-btn:hover,
+    .reject-btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  DOCTOR DASHBOARD
+</header>
+
+<div class="container">
+  <h2>Pending Appointments</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Reason</th>
+        <th>Date</th>
+        <th>Doctor</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ravi Kumar</td>
+        <td>Chest pain</td>
+        <td>2025-04-13</td>
+        <td>B R Master</td>
+        <td class="action-buttons">
+          <button class="accept-btn">Accept</button>
+          <button class="reject-btn">Reject</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Seema Verma</td>
+        <td>Skin rash</td>
+        <td>2025-04-14</td>
+        <td>S K Sharma</td>
+        <td class="action-buttons">
+          <button class="accept-btn">Accept</button>
+          <button class="reject-btn">Reject</button>
+        </td>
+      </tr>
+      <!-- Add more rows dynamically here -->
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

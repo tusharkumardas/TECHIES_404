@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ONLINE CONSULTANT</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    header {
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 0;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    form {
+      background-color: #51cc55;
+      max-width: 800px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .textarea-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+
+    .textarea-container {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      resize: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    .button-group {
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      margin: 0 10px;
+      background-color: white;
+      color: #4CAF50;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+      color: white;
+    }
+
+    .label-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>RURAL HEALTHCARE CONNECT</h1>
+  </header>
+
+  <form id="form1" runat="server">
+    <h1>ONLINE CONSULTANT</h1>
+
+    <div class="textarea-row">
+      <div class="textarea-container">
+        <textarea placeholder="State your problem..."></textarea>
+      </div>
+
+      <div class="textarea-container">
+        <textarea placeholder="Doctor's response..."></textarea>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button type="button">CANCEL</button>
+      <button type="submit">SEND</button>
+    </div>
+
+    <div class="label-button">
+      <label for="message">Medicine prescribed by doctor:</label>
+      <button type="button">PRINT</button>
+    </div>
+  </form>
+</body>
+</html>
