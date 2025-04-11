@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+      body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #816eaf; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #591183; /* Darker header background */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4caf50; /* Green color for the logo */
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff; /* White text for links */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #4caf50; /* Change color on hover */
+}
+
+.cta-button {
+    background-color: #4caf50; /* Green button */
+    color: #ffffff; /* White text */
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #41c39a; /* Darker green on hover */
+}
+/*chstart*/
+
+.our-story {
+    background-color: #f9fefb;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #2d2d2d;
+  }
+  
+  .our-story .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .story-content {
+    flex: 1 1 500px;
+  }
+  
+  .story-content h2 {
+    font-size: 2.5em;
+    color: #20603d;
+    margin-bottom: 20px;
+  }
+  
+  .story-content p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+  .story-content .quote {
+    font-style: italic;
+    font-weight: 500;
+    background-color: #e9f7ef;
+    padding: 15px 20px;
+    border-left: 5px solid #45a77c;
+    border-radius: 5px;
+  }
+  
+  .story-image {
+    flex: 1 1 400px;
+  }
+  
+  .story-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  /* Responsive tweaks */
+@media (max-width: 768px) {
+    .our-story .container {
+      flex-direction: column;
+    }
+  }
+  /*mission*/
+  .mission-vision {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1e3a34;
+  }
+  
+  .mission-vision .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #20603d;
+  }
+  
+  .mv-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .box {
+    background-color: #f0faf6;
+    border: 1px solid #d3eee0;
+    border-radius: 10px;
+    padding: 30px 25px;
+    max-width: 500px;
+    flex: 1 1 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+  }
+  
+  .box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .box h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #2c6e4f;
+  }
+  
+  .box p {
+    font-size: 1.05em;
+    line-height: 1.6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .mv-wrapper {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  /*what we do**/
+  .what-we-do {
+    background-color: #f8fcf9;
+    padding: 70px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1e3a34;
+    text-align: center;
+  }
+  
+  .what-we-do .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #20603d;
+  }
+  
+  .section-intro {
+    font-size: 1.15em;
+    margin-bottom: 50px;
+    color: #3a4d44;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+  }
+  
+  .service-card {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-card img {
+    width: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #2c6e4f;
+  }
+  
+  .service-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 600px) {
+    .section-intro {
+      font-size: 1em;
+    }
+  }
+
+  /*impact*/
+  .impact-section {
+    background-color: #f4faf7;
+    padding: 70px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #1e3a34;
+    text-align: center;
+  }
+  
+  .impact-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .section-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #20603d;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    color: #4d6d61;
+  }
+  
+  .impact-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .stat-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-box:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-box h3 {
+    font-size: 2em;
+    color: #2c6e4f;
+    margin-bottom: 10px;
+  }
+  
+  .stat-box p {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  .testimonial {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-left: 6px solid #45a77c;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  }
+  
+  .quote-box p {
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 1.7;
+    color: #2d2d2d;
+  }
+  
+  .author {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2c6e4f;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .stat-box h3 {
+      font-size: 1.5em;
+    }
+  }
+  /*call to action*/
+  .call-to-action {
+    background: linear-gradient(135deg, #20603d, #45a77c);
+    padding: 80px 20px;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .cta-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .call-to-action h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .call-to-action p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #e0f4ec;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .cta-btn {
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1em;
+    transition: background 0.3s ease;
+    font-weight: 500;
+  }
+  
+  .cta-btn.primary {
+    background-color: #ffffff;
+    color: #20603d;
+  }
+  
+  .cta-btn.primary:hover {
+    background-color: #e6f7ef;
+  }
+  
+  .cta-btn.secondary {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+  }
+  
+  .cta-btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .call-to-action h2 {
+      font-size: 2em;
+    }
+  
+    .cta-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /*footer*/
+  .site-footer {
+    background-color: #1e3a34;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 60px 20px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  
+  .footer-about, .footer-links, .footer-contact {
+    flex: 1 1 250px;
+  }
+  
+  .footer-about h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #45a77c;
+  }
+  
+  .footer-about p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #d4f2e4;
+  }
+  
+  .footer-links h4,
+  .footer-contact h4 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #f0faf7;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul li a {
+    color: #d4f2e4;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #ffffff;
+  }
+  
+  .footer-contact p {
+    font-size: 1em;
+    color: #d4f2e4;
+    margin-bottom: 10px;
+  }
+  
+  .footer-contact a {
+    color: #d4f2e4;
+    text-decoration: underline;
+  }
+  
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin-right: 12px;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+  }
+  
+  .social-icons a:hover img {
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #345c52;
+    padding-top: 20px;
+    color: #a0cbbf;
+    font-size: 0.95em;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+    </style>
+    
+   <!-- <link rel="stylesheet" href="style3.css">-->
+</head>
+
+<body>
+    <header>
+        
+        <div class="logo">Rural Health Connect</div>
+        &nbsp &nbsp
+        <nav>
+            <a href="Home1.html">Home</a> &nbsp
+            <a href="About.html">About Us</a> &nbsp
+          
+            <a href="#resources">Emergency</a>
+            &nbsp
+            <a href="contact.html">Contact</a>
+        </nav>
+        &nbsp&nbsp&nbsp&nbsp
+        <button class="cta-button">Login</button>
+
+    </header>
+
+    <!--ch-->
+    <section class="our-story">
+        <div class="container">
+          <div class="story-content">
+            <h2>Our Story: From the Roots Up</h2>
+            <p>
+      It all started with a simple question:
+ <strong>What if we could bring a doctor to every village</strong> — not by building more hospitals, but by building smarter connections?
+            </p>
+            <p>
+   In countless rural communities, access to quality healthcare was a distant dream. Long travel times, lack of infrastructure, and health worker shortages left millions underserved. That’s when we decided to act.
+            </p>
+            <p>
+ At the heart of our platform is the belief that <strong>technology should serve humanity</strong>. By combining the power of digital tools, real-time data, and a trusted network of local health workers, we are reshaping how rural healthcare is delivered.
+            </p>
+            <p class="quote">
+ “When you connect care with compassion, even the most remote village becomes a place of healing.”
+            </p>
+          </div>
+          <div class="story-image">
+            <img src="rural.jpg" alt="Community health worker assisting a patient in a rural village" />
+          </div>
+        </div>
+      </section>
+      <!--mission-->
+      <section class="mission-vision">
+        <div class="container">
+          <h2 class="section-title">Our Mission & Vision</h2>
+          <div class="mv-wrapper">
+            <div class="mission box">
+              <h3>Our Mission</h3>
+              <p>
+                To deliver quality, accessible, and continuous healthcare to underserved rural populations 
+                through smart technology, local empowerment, and sustainable systems.
+              </p>
+            </div>
+            <div class="vision box">
+              <h3>Our Vision</h3>
+              <p>
+                A future where every village, no matter how remote, has access to timely, reliable, and compassionate healthcare —
+                powered by connectivity, innovation, and community spirit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+       
+      <!--what we do-->
+      <section class="what-we-do">
+        <div class="container">
+          <h2 class="section-title">What We Do</h2>
+          <p class="section-intro">
+            We combine innovation with compassion to bring smart, connected healthcare solutions to rural communities.
+          </p>
+      
+          <div class="services-grid">
+            <div class="service-card">
+              <img src="icons/telemedicine.svg" alt="Telemedicine Icon">
+              <h3>Telemedicine Access</h3>
+              <p>Virtual consultations with certified doctors, connecting patients to care no matter where they are.</p>
+            </div>
+      
+            <div class="service-card">
+              <img src="icons/iot-device.svg" alt="IoT Health Device Icon">
+              <h3>Connected Health Devices</h3>
+              <p>IoT-powered diagnostics and monitoring tools for real-time, remote health management.</p>
+            </div>
+      
+           
+      
+            <div class="service-card">
+              <img src="icons/analytics.svg" alt="Analytics Icon">
+              <h3>Health Data & Insights</h3>
+              <p>AI-driven health analytics for smarter decision-making and early warning systems in rural areas.</p>
+            </div>
+      
+            
+          </div>
+        </div>
+      </section>
+      <!--impact-->
+      <section class="impact-section">
+        <div class="container">
+          <h2 class="section-title">Impact in Action</h2>
+          <p class="section-subtitle">
+            Empowering communities. Saving lives. Creating hope.
+          </p>
+      
+          <div class="impact-stats">
+            <div class="stat-box">
+              <h3>150+</h3>
+              <p>Remote Villages Reached</p>
+            </div>
+            <div class="stat-box">
+              <h3>10,000+</h3>
+              <p>Telehealth Consultations Delivered</p>
+            </div>
+            <div class="stat-box">
+              <h3>500+</h3>
+              <p>Community Health Workers Trained</p>
+            </div>
+            <div class="stat-box">
+              <h3>80%</h3>
+              <p>Reduction in Travel for Basic Care</p>
+            </div>
+          </div>
+      
+          <div class="testimonial">
+            <div class="quote-box">
+              <p>
+                “I used to walk 3 hours to reach a clinic. Now, I get checkups right from my home — all thanks to the health worker and her tablet.”
+              </p>
+              <span class="author">— Meena Devi, Community Health Worker</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!--call to action-->
+      <section class="call-to-action">
+        <div class="cta-container">
+          <h2>Together, We Can Transform Rural Healthcare</h2>
+          <p>
+            Be a part of the movement. Join us in bringing smart, connected care to the heart of every village.
+          </p>
+          <div class="cta-buttons">
+            <a href="#get-involved" class="cta-btn primary">Join Our Mission</a>
+            <a href="#projects" class="cta-btn secondary">Explore Our Work</a>
+          </div>
+        </div>
+      </section>
+
+        <!--footer-->
+        <footer class="site-footer">
+            <div class="footer-container">
+              <div class="footer-about">
+                <h3>SmartRural Health</h3>
+                <p>
+                  Bridging the healthcare gap with technology and heart — bringing smart, connected care to rural communities everywhere.
+                </p>
+              </div>
+          
+              <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><a href="#about">About Us</a></li>
+                  <li><a href="#mission">Mission & Vision</a></li>
+                  <li><a href="#services">What We Do</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </div>
+          
+              <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:info@smartruralhealth.org">info@smartruralhealth.org</a></p>
+                <p>Phone: +91-1234-567890</p>
+                
+               
+              </div>
+            </div>
+          
+            <div class="footer-bottom">
+              <p>&copy; 2025 SmartRural Health. All rights reserved.</p>
+            </div>
+          </footer>
+           
+         
+    </body>
+    </html>
