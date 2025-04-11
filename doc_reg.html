@@ -49,8 +49,8 @@
         <label for="clinic_address">Clinic/Hospital Address:</label>
         <textarea id="clinic_address" name="clinic_address" rows="3" required></textarea>
     
-        <label for="service_area">Area Covered (Villages, District, etc.):</label>
-        <textarea id="service_area" name="service_area" rows="2" required></textarea>
+        <!--<label for="service_area">Area Covered (Villages, District, etc.):</label>
+        <textarea id="service_area" name="service_area" rows="2" required></textarea>-->
     
         <label for="availability">Availability (Days/Hours):</label>
         <input type="text" id="availability" name="availability" required>
@@ -63,5 +63,28 @@
     
         <input type="submit" value="Register">
       </form>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyW-1YUqD7RTfFu1fBcm_X8meJ8Lf3L42O3Yy3Lu4T1Prsd0W27cHUWVc2e6y-Gtqtw/exec';
+        const form = document.querySelector("form");
+      
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+      
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+      
+          fetch(scriptURL, {
+            method: 'POST',
+            body: JSON.stringify(data),
+          })
+          .then(response => {
+            alert("Doctor registered successfully!");
+            form.reset();
+          })
+          .catch(error => {
+            alert("Error occurred: " + error.message);
+          });
+        });
+      </script>
 </body>
 </html>
